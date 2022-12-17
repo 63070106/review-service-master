@@ -29,4 +29,26 @@ public class ReviewQueryHandler {
         }
         return reviewsRest;
     }
+
+    @QueryHandler
+    ReviewEntity handle (FindReviewByIdQuery query){
+        ReviewEntity review = reviewRepository
+//                .findById(query.getReviewId()).orElse(null);
+                .findByReviewId(query.getReviewId());
+        return review;
+    }
+
+    @QueryHandler
+    List<ReviewRestModel> handle (FindReviewByStoreTypeQuery query){
+        List<ReviewRestModel> reviewsRest = new ArrayList<>();
+        List<ReviewEntity> storedReviews = reviewRepository
+                .findByStoreType(query.getStore_type());
+        for (ReviewEntity reviewEntity : storedReviews){
+            ReviewRestModel reviewRestModel = new ReviewRestModel();
+            BeanUtils.copyProperties(reviewEntity, reviewRestModel);
+            reviewsRest.add(reviewRestModel);
+        }
+        return reviewsRest;
+
+    }
 }
