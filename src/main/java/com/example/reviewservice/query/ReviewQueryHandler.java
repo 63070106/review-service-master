@@ -34,7 +34,7 @@ public class ReviewQueryHandler {
     ReviewEntity handle (FindReviewByIdQuery query){
         ReviewEntity review = reviewRepository
 //                .findById(query.getReviewId()).orElse(null);
-                .findByReviewId(query.getReviewId());
+                .findByReviewId(query.get_id());
         return review;
     }
 

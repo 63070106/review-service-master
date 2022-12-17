@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class FindReviewByIdQuery {
-    private String reviewId;
+    private String _id;
 
-    public FindReviewByIdQuery(String reviewId){
-        this.reviewId = reviewId;
+    public FindReviewByIdQuery(String _id){
+        this._id = _id;
     }
 }

@@ -17,7 +17,7 @@ public class ReviewEntity implements Serializable {
     private static final long serialVersionUID = 1778265464960090939L;
     @Id
     @Column(unique = true)
-    private String reviewId;
+    private String _id;
     private String name;
     private String branch;
     private String store_type;

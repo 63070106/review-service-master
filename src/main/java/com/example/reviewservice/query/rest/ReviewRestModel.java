@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ReviewRestModel {
-    private String reviewId;
+    private String _id;
     private String name;
     private String branch;
     private String store_type;

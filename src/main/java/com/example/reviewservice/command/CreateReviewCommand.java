@@ -9,7 +9,7 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Data
 public class CreateReviewCommand {
     @TargetAggregateIdentifier
-    private final String reviewId;
+    private final String _id;
     private final String name;
     private final String branch;
     private final String store_type;

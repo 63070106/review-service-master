@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
 @Aggregate
 public class ReviewAggregate {
     @AggregateIdentifier
-    private String reviewId;
+    private String _id;
     private String name;
     private String branch;
     private String store_type;
@@ -50,7 +50,7 @@ public class ReviewAggregate {
 
     @EventSourcingHandler
     public void on(ReviewCreatedEvent reviewCreatedEvent){
-        this.reviewId = reviewCreatedEvent.getReviewId();
+        this._id = reviewCreatedEvent.get_id();
         this.name = reviewCreatedEvent.getName();
         this.branch = reviewCreatedEvent.getBranch();
         this.store_type = reviewCreatedEvent.getStore_type();

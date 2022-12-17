@@ -29,7 +29,7 @@ public class ReviewCommandController {
     @PostMapping
     public String createReview(@RequestBody CreateReviewModel model){
         CreateReviewCommand command = CreateReviewCommand.builder()
-                .reviewId(UUID.randomUUID().toString())
+                ._id(UUID.randomUUID().toString())
                 .name(model.getName())
                 .branch(model.getBranch())
                 .store_type(model.getStore_type())
